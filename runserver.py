@@ -50,6 +50,9 @@ def runserver(port):
 
 @cli.command()
 def create_index():
+    """
+
+    """
     return search.create_index()
 
 
