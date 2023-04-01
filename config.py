@@ -71,7 +71,7 @@ MAIL_DEFAULT_SENDER = '1171341386@qq.com'
 # MAIL_SUPPRESS_SEND = True
 
 SERVER_NAME = 'localhost:8000'
-SUBDOMAIN = {'forums': True, 'docs': True}
+SUBDOMAIN = {'forums': False, 'docs': True}
 
 # logging setting
 LOGGING = {

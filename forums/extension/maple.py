@@ -19,6 +19,7 @@ from flask_maple.middleware import Middleware
 from flask_maple.log import Logging
 from PIL import ImageFont
 
+font = r'fonts\Dengl.ttf'
 bootstrap = Bootstrap(css=('styles/monokai.css', 'styles/mine.css'),
                       js=('styles/upload.js', 'styles/forums.js',
                           'styles/following.js', 'styles/topic.js'),
@@ -27,7 +28,7 @@ bootstrap = Bootstrap(css=('styles/monokai.css', 'styles/mine.css'),
 
 def init_app(app):
     bootstrap.init_app(app)
-    Captcha(app, font=ImageFont.load_default())
+    Captcha(app, font=font)
     Error(app)
     App(app, json=CustomJSONEncoder)
     Middleware(app)

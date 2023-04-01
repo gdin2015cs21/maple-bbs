@@ -78,7 +78,7 @@ class TopicListView(MethodView):
         data = {'title': title, 'topics': topics}
         return render_template('topic/topic_list.html', **data)
 
-    @form_validate(form_board, error=error_callback, f='')
+    # @form_validate(form_board, error=error_callback, f='')
     def post(self):
         user = request.user
         form = form_board()
@@ -111,6 +111,7 @@ class TopicListView(MethodView):
         topic.author.topic_count = 1
         topic.reply_count = 1
         return redirect(url_for('topic.topic', pk=topic.id))
+        # return {'success': True}
 
 
 class TopicView(MethodView):
@@ -154,12 +155,13 @@ class TopicView(MethodView):
             topic.board_id = int(category)
         topic.save()
         return HTTPResponse(HTTPResponse.NORMAL_STATUS).to_response()
+        # return redirect(url_for('topic.topic', pk=pk))
 
 
 class ReplyListView(MethodView):
     decorators = (reply_list_permission, )
 
-    @form_validate(ReplyForm, error=error_callback, f='')
+    # @form_validate(ReplyForm, error=error_callback, f='')
     def post(self, pk):
         topic = Topic.query.filter_by(id=pk).first_or_404()
         post_data = request.data

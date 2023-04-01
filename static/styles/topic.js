@@ -86,12 +86,30 @@ $(document).ready(function(){
             success: function(response) {
                 if (response.status === '200') {
                     window.location.href= url;
-                }else {
-                    if (response.description != ""){
-                        alert(response.description);
-                    }else {
-                        alert(response.message);
-                    }
+                }
+            }
+        });
+    });
+    $('#topic-post-btn').click(function() {
+        var _$this = $(this);
+//        console.log('topic-post-btn');
+        var url = '/topic';
+        var data = {
+            csrf_token:$('input[name="csrf_token"]').val(),
+            title:$('input[name="title"]').val(),
+            tags:$('input[name="tags"]').val(),
+            category:$('select[name="category"]').val(),
+            content:$('textarea[name="content"]').val(),
+            content_type:$('select[name="content_type"]').val()
+        };
+        $.ajax ({
+            type : "POST",
+            url : url,
+            data:JSON.stringify(data),
+            contentType: 'application/json;charset=UTF-8',
+            success: function(response) {
+                if (response.status === '200') {
+                    window.location.href= url;
                 }
             }
         });
