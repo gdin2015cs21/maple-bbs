@@ -31,6 +31,8 @@ from .permissions import (like_permission, reply_list_permission,
                           reply_permission, topic_list_permission,
                           topic_permission, edit_permission)
 from forums.api.message.db import MessageClient
+from qn_.qn_log import check_log
+logger = check_log('check.log')
 
 
 class TopicAskView(IsConfirmedMethodView):
@@ -118,6 +120,7 @@ class TopicView(MethodView):
     decorators = (topic_permission, )
 
     def get(self, pk):
+        logger.info('get key:' + str(pk))
         form = ReplyForm()
         request_data = request.data
         topic = Topic.query.filter_by(id=pk).first_or_404()
@@ -138,6 +141,7 @@ class TopicView(MethodView):
 
     @form_validate(form_board)
     def put(self, pk):
+        logger.info('key:' + str(pk))
         form = form_board()
         post_data = form.data
         topic = Topic.query.filter_by(id=pk).first_or_404()
@@ -154,14 +158,15 @@ class TopicView(MethodView):
         if category is not None:
             topic.board_id = int(category)
         topic.save()
-        return HTTPResponse(HTTPResponse.NORMAL_STATUS).to_response()
-        # return redirect(url_for('topic.topic', pk=pk))
+        # return HTTPResponse(HTTPResponse.NORMAL_STATUS).to_response()
+        return redirect(url_for('topic.topic', pk=pk, _method='GET'))
+        # return {'success': True}
 
 
 class ReplyListView(MethodView):
     decorators = (reply_list_permission, )
 
-    # @form_validate(ReplyForm, error=error_callback, f='')
+    @form_validate(ReplyForm, error=error_callback, f='')
     def post(self, pk):
         topic = Topic.query.filter_by(id=pk).first_or_404()
         post_data = request.data
