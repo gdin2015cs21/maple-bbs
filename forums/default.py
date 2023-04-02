@@ -10,7 +10,7 @@
 #          By:
 # Description:
 # ********************************************************************************
-SITE = {'title': '紅楓林', 'subtitle': '爱生活，更爱自由', 'avatar': ''}
+SITE = {'title': '脑洞', 'subtitle': '让你大开脑洞', 'avatar': ''}
 SUBDOMAIN = {"forums": True, "docs": True}
 LANGUAGES = {'en': 'English', 'zh': 'Chinese'}
 INDEX = [{

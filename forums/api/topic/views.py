@@ -80,7 +80,7 @@ class TopicListView(MethodView):
         data = {'title': title, 'topics': topics}
         return render_template('topic/topic_list.html', **data)
 
-    # @form_validate(form_board, error=error_callback, f='')
+    @form_validate(form_board, error=error_callback, f='')
     def post(self):
         user = request.user
         form = form_board()
@@ -158,8 +158,8 @@ class TopicView(MethodView):
         if category is not None:
             topic.board_id = int(category)
         topic.save()
-        # return HTTPResponse(HTTPResponse.NORMAL_STATUS).to_response()
-        return redirect(url_for('topic.topic', pk=pk, _method='GET'))
+        return HTTPResponse(HTTPResponse.NORMAL_STATUS).to_response()
+        # return redirect(url_for('topic.topic', pk=pk, _method='GET'))
         # return {'success': True}
 
 

@@ -1,3 +1,12 @@
 <div class="panel-body topic-content">
   {{ topic.text }}
 </div>
+<script type="text/javascript">
+  function escape2Html(str) {
+      var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+      return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+     }
+  x = document.getElementsByClassName('topic-content')[0].innerHTML
+  strHT=escape2Html(x)
+  $('.topic-content').html(strHT)
+</script>

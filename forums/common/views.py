@@ -66,7 +66,7 @@ class MethodView(_MethodView):
 
 
 class BaseMethodView(_MethodView):
-    @cache.cached(timeout=180, key_prefix=cache_key)
+    # @cache.cached(timeout=180, key_prefix=cache_key)
     def dispatch_request(self, *args, **kwargs):
         return super(BaseMethodView, self).dispatch_request(*args, **kwargs)
 

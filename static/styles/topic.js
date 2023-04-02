@@ -99,7 +99,8 @@ $(document).ready(function(){
             title:$('input[name="title"]').val(),
             tags:$('input[name="tags"]').val(),
             category:$('select[name="category"]').val(),
-            content:$('textarea[name="content"]').val(),
+//            content:$('textarea[name="content"]').val(),
+            content: editor.html(),
             content_type:$('select[name="content_type"]').val()
         };
         $.ajax ({
@@ -109,9 +110,11 @@ $(document).ready(function(){
             contentType: 'application/json;charset=UTF-8',
             success: function(response) {
                 if (response.status === '200') {
-                    window.location.href= url;
+//                    window.location.href= url;
+                      document.location.href = 'http://www.cnblogs.com/chenyablog'
                 }
             }
         });
+//        event.preventDefault();
     });
 });
