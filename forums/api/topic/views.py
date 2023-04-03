@@ -180,6 +180,7 @@ class ReplyListView(MethodView):
         # count
         topic.board.post_count = 1
         reply.author.reply_count = 1
+        topic.reply_count = 1
         return redirect(url_for('topic.topic', pk=topic.id))
 
 
