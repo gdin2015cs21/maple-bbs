@@ -17,6 +17,9 @@ $(document).ready(function(){
                         _$this.attr("title","赞");
                         _$this.removeClass("like-active");
                         _$this.addClass("like-no-active");
+//                        console.log(_$this.getElementsByClassName('reply-count').innerHTML)
+                        like_count = parseInt(_$this.children(".reply-count").text()) - 1;
+                        _$this.children(".reply-count").text(like_count);
                     } else {
                         window.location.href = response.url;
                     }
@@ -33,6 +36,8 @@ $(document).ready(function(){
                         _$this.attr("title","取消赞");
                         _$this.removeClass("like-no-active");
                         _$this.addClass("like-active");
+                        like_count = parseInt(_$this.children(".reply-count").text()) + 1;
+                        _$this.children(".reply-count").text(like_count);
                     } else
                     {
                         window.location.href = response.url;

@@ -214,6 +214,7 @@ class LikeView(MethodView):
         reply.save()
         MessageClient.like(reply)
         serializer = Serializer(reply, many=False)
+        reply.liker_count = 1
         return HTTPResponse(
             HTTPResponse.NORMAL_STATUS, data=serializer.data).to_response()
 
@@ -223,5 +224,6 @@ class LikeView(MethodView):
         reply.likers.remove(user)
         reply.save()
         serializer = Serializer(reply, many=False)
+        reply.liker_count = -1
         return HTTPResponse(
             HTTPResponse.NORMAL_STATUS, data=serializer.data).to_response()
