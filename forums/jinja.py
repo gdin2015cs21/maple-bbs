@@ -34,7 +34,7 @@ def markdown(text, clean=True):
 
 
 def timesince(dt, default="just now"):
-    now = datetime.utcnow()
+    now = datetime.now()
     diff = now - dt
     if diff.days > 10:
         return format_datetime(dt, 'Y-M-d H:m')
@@ -57,8 +57,8 @@ def timesince(dt, default="just now"):
 
 def show_time():
     if g.user.is_authenticated:
-        return 'LOCALE:' + format_datetime(datetime.utcnow())
-    return 'UTC:' + format_datetime(datetime.utcnow())
+        return 'LOCALE:' + format_datetime(datetime.now())
+    return 'UTC:' + format_datetime(datetime.now())
 
 
 def hot_tags():

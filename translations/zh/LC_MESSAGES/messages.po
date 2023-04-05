@@ -104,7 +104,7 @@ msgstr "分类:"
 
 #: forums/api/forms.py:98
 msgid "Tags:"
-msgstr "节点:"
+msgstr "标签:"
 
 #: forums/api/forms.py:100
 msgid "ContentType"
@@ -340,7 +340,7 @@ msgstr "博客"
 
 #: templates/base/header.html:70 templates/base/link.html:10
 msgid "TagList"
-msgstr "节点"
+msgstr "标签"
 
 #: templates/base/header.html:71 templates/forums/index.html:13
 msgid "Good"
@@ -360,7 +360,7 @@ msgstr ""
 
 #: templates/base/link.html:52 templates/follow/following_tags.html:4
 msgid "Following Tags"
-msgstr "关注的节点"
+msgstr "关注的标签"
 
 #: templates/base/link.html:55 templates/follow/following_topics.html:4
 msgid "Following Topics"
@@ -404,11 +404,11 @@ msgstr "登陆"
 
 #: templates/base/panel.html:71
 msgid "Hot Tags"
-msgstr "热门节点"
+msgstr "热门标签"
 
 #: templates/base/panel.html:72
 msgid "Recent Tags"
-msgstr "最近增加的节点"
+msgstr "最近增加的标签"
 
 #: templates/base/panel.html:91
 msgid "Forums Count"

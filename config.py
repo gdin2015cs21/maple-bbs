@@ -102,6 +102,6 @@ MSEARCH_BACKEND = 'whoosh'
 # SQLALCHEMY_ECHO = True
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
 # SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db'
-BABEL_DEFAULT_LOCALE = 'en'
+BABEL_DEFAULT_LOCALE = 'Asia/Shanghai'
 BABEL_DEFAULT_TIMEZONE = 'UTC'
 BABEL_TRANSLATION_DIRECTORIES = path.join(PATH, 'translations')

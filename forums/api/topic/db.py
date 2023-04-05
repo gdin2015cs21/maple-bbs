@@ -41,10 +41,10 @@ class Topic(db.Model, ModelMixin):
     content_type = db.Column(
         db.String(10), nullable=False, default=CONTENT_TYPE_MARKDOWN)
     created_at = db.Column(
-        db.DateTime, default=datetime.utcnow(), nullable=False)
+        db.DateTime, default=datetime.now(), nullable=False)
 
     updated_at = db.Column(
-        db.DateTime, default=datetime.utcnow(), onupdate=datetime.utcnow())
+        db.DateTime, default=datetime.now(), onupdate=datetime.now())
     is_good = db.Column(db.Boolean, default=False)
     is_top = db.Column(db.Boolean, default=False)
     author_id = db.Column(db.Integer,
@@ -127,9 +127,9 @@ class Reply(db.Model, ModelMixin):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text, nullable=False)
     created_at = db.Column(
-        db.DateTime, default=datetime.utcnow(), nullable=False)
+        db.DateTime, default=datetime.now(), nullable=False)
     updated_at = db.Column(
-        db.DateTime, default=datetime.utcnow(), onupdate=datetime.utcnow())
+        db.DateTime, default=datetime.now(), onupdate=datetime.now())
     topic_id = db.Column(db.Integer,
                          db.ForeignKey('topics.id', ondelete="CASCADE"))
     topic = db.relationship(

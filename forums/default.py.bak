@@ -24,8 +24,8 @@ INDEX = [{
     "icon": "fa-book",
     "color": "#eeccaa"
 }, {
-    "name": "TagList",
-    "url": "tag.list",
+    "name": "Blog",
+    "url": "docs.list",
     "icon": "fa-tasks",
     "color": "#337ab7"
 }, {
@@ -40,6 +40,9 @@ HEADER = [{
 }, {
     "name": "Wiki",
     "url": "docs.list"
+}, {
+    "name": "Blog",
+    "url": "forums.forums"
 }, {
     "name": "TagList",
     "url": "tag.list"

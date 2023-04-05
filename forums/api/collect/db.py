@@ -34,9 +34,9 @@ class Collect(db.Model, ModelMixin):
     description = db.Column(db.String(256), nullable=True)
     is_hidden = db.Column(db.Boolean, default=False)
     created_at = db.Column(
-        db.DateTime, default=datetime.utcnow(), nullable=False)
+        db.DateTime, default=datetime.now(), nullable=False)
     updated_at = db.Column(
-        db.DateTime, default=datetime.utcnow(), onupdate=datetime.utcnow())
+        db.DateTime, default=datetime.now(), onupdate=datetime.now())
     author_id = db.Column(db.Integer,
                           db.ForeignKey('user.id', ondelete="CASCADE"))
     author = db.relationship(

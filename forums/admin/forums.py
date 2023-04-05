@@ -37,6 +37,6 @@ def init_admin(admin):
         TagView(
             Tags,
             db.session,
-            name='管理节点',
+            name='管理标签',
             endpoint='admin_tag',
             category='管理社区'))
