@@ -111,7 +111,7 @@ class TopicListView(MethodView):
         topic.board.topic_count = 1
         topic.board.post_count = 1
         topic.author.topic_count = 1
-        topic.reply_count = 1
+        # topic.reply_count = 1
         return redirect(url_for('topic.topic', pk=topic.id))
         # return {'success': True}
 
