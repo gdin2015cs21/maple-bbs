@@ -29,8 +29,7 @@ class SearchView(MethodView):
                 fields = ['title']
             elif include == '2':
                 fields = ['content']
-            results = Topic.query.msearch(
-                keyword, fields=fields).paginate(page, number, True)
+            results = Topic.query.msearch('*{}*'.format(keyword), fields=fields).paginate(page, number, True)
             data = {'title': 'Search', 'results': results, 'keyword': keyword}
             return render_template('search/result.html', **data)
         data = {'title': 'Search'}
