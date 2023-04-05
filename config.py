@@ -70,7 +70,7 @@ MAIL_PASSWORD = "stvqbfdfdydxhbff"
 MAIL_DEFAULT_SENDER = '1171341386@qq.com'
 # MAIL_SUPPRESS_SEND = True
 
-SERVER_NAME = 'localhost:8000'
+# SERVER_NAME = 'localhost:8000'
 SUBDOMAIN = {'forums': False, 'docs': False}
 
 # logging setting
@@ -102,6 +102,6 @@ MSEARCH_BACKEND = 'whoosh'
 # SQLALCHEMY_ECHO = True
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
 # SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db'
-BABEL_DEFAULT_LOCALE = 'Asia/Shanghai'
+BABEL_DEFAULT_LOCALE = 'en'
 BABEL_DEFAULT_TIMEZONE = 'UTC'
 BABEL_TRANSLATION_DIRECTORIES = path.join(PATH, 'translations')

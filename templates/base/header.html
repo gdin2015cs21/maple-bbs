@@ -51,7 +51,9 @@
         <img alt="Honmaple" src="{{url_for('static',filename='images/header.png')}}" style="width:48px;">
       </a>
       <div class="navbar-brand" style="padding-top:2;padding-left:23px;margin-top:-12px;">
-        <span style="font-size:20px;color:#EB5424"><b class="text-capitalize">{{ DEFAULT.SITE['title'] }}</b></span>
+        <a href="{{ url_for('forums.index')}}" style="text-decoration: none">
+          <span style="font-size:20px;color:#EB5424"><b class="text-capitalize">{{ DEFAULT.SITE['title'] }}</b></span>
+        </a>
         <br/>
         <small style="font-size:10px">{{ _(DEFAULT.SITE['subtitle']) }}</small>
       </div>

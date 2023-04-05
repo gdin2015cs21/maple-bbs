@@ -10,7 +10,7 @@
 #          By:
 # Description:
 # ********************************************************************************
-SITE = {'title': '脑洞', 'subtitle': '让你大开脑洞', 'avatar': ''}
+SITE = {'title': 'LMZH', 'subtitle': 'Language Model - ZH', 'avatar': ''}
 SUBDOMAIN = {"forums": True, "docs": True}
 LANGUAGES = {'en': 'English', 'zh': 'Chinese'}
 INDEX = [{
