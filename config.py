@@ -43,7 +43,7 @@ CACHE_DEFAULT_TIMEOUT = 60
 CACHE_KEY_PREFIX = 'cache:'
 CACHE_REDIS_HOST = '192.168.0.101'
 CACHE_REDIS_PORT = '6379'
-CACHE_REDIS_PASSWORD = 'wan8073'
+CACHE_REDIS_PASSWORD = 'xxxxxx'
 CACHE_REDIS_DB = 2
 
 # Redis setting
@@ -66,7 +66,7 @@ MAIL_PORT = 25
 MAIL_USE_TLS = True
 MAIL_USE_SSL = False
 MAIL_USERNAME = "1171341386@qq.com"
-MAIL_PASSWORD = "stvqbfdfdydxhbff"
+MAIL_PASSWORD = "xxxxxx"
 MAIL_DEFAULT_SENDER = '1171341386@qq.com'
 # MAIL_SUPPRESS_SEND = True
 
@@ -94,7 +94,7 @@ LOGGING = {
 }
 
 # Sql
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:{}@192.168.0.101/postgres'.format(quote('(Wan807372986!)'))
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:{}@192.168.0.101/postgres'.format(quote('xxxxxx'))
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
 
 MSEARCH_INDEX_NAME = 'msearch'
