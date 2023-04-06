@@ -16,9 +16,9 @@ from urllib.parse import quote
 
 PATH = path.abspath(path.dirname(__file__))
 DEBUG = True
-SECRET_KEY = 'wan'
-SECURITY_PASSWORD_SALT = 'wan8087~'
-SECRET_KEY_SALT = 'wan8073~'
+SECRET_KEY = 'xxxxx'
+SECURITY_PASSWORD_SALT = 'xxxxx'
+SECRET_KEY_SALT = 'xxxxx'
 
 # avatar upload directory
 AVATAR_FOLDER = path.join(PATH, 'avatars')
@@ -50,7 +50,7 @@ CACHE_REDIS_DB = 2
 REDIS = {
     'host': '192.168.0.101',
     'db': 1,
-    'password': 'wan8073',
+    'password': 'xxxxx',
     'decode_responses': True
 }
 
@@ -65,9 +65,9 @@ MAIL_SERVER = 'smtp.qq.com'
 MAIL_PORT = 25
 MAIL_USE_TLS = True
 MAIL_USE_SSL = False
-MAIL_USERNAME = "1171341386@qq.com"
+MAIL_USERNAME = "xxxxx@qq.com"
 MAIL_PASSWORD = "xxxxxx"
-MAIL_DEFAULT_SENDER = '1171341386@qq.com'
+MAIL_DEFAULT_SENDER = 'xxxxx@qq.com'
 # MAIL_SUPPRESS_SEND = True
 
 # SERVER_NAME = 'localhost:8000'
