@@ -234,43 +234,43 @@ msgstr "英文"
 
 #: forums/common/response.py:34
 msgid "Username or Password Error"
-msgstr ""
+msgstr "用户名或密码错误"
 
 #: forums/common/response.py:35
 msgid "Captcha Error"
-msgstr ""
+msgstr "验证码错误"
 
 #: forums/common/response.py:36
 msgid "The email has been registered!"
-msgstr ""
+msgstr "该邮箱被注册过"
 
 #: forums/common/response.py:37
 msgid "The username has been registered!"
-msgstr ""
+msgstr "该用户名被注册过"
 
 #: forums/common/response.py:38
 msgid "The email is error"
-msgstr ""
+msgstr "邮箱错误"
 
 #: forums/common/response.py:40
 msgid "Your account has been confirmed,don't need again!"
-msgstr ""
+msgstr "您的帐户已被确认，无需再次确认！"
 
 #: forums/common/response.py:42
 msgid "Token is out of time,please get token again!"
-msgstr ""
+msgstr "Token过期，请重新获取！"
 
 #: forums/common/response.py:43
 msgid "Form validate error"
-msgstr ""
+msgstr "表单验证错误"
 
 #: forums/common/response.py:44
 msgid "You have no permission!"
-msgstr ""
+msgstr "没有权限!"
 
 #: forums/common/response.py:45
 msgid "Other error"
-msgstr ""
+msgstr "其他错误"
 
 #: forums/extension/login.py:30
 msgid "Please login to access this page."
@@ -356,7 +356,7 @@ msgstr "所有主题"
 
 #: templates/base/link.html:27
 msgid "BoardList"
-msgstr ""
+msgstr "版块列表"
 
 #: templates/base/link.html:52 templates/follow/following_tags.html:4
 msgid "Following Tags"
@@ -496,7 +496,7 @@ msgstr "编辑收藏"
 
 #: templates/follow/none.html:3
 msgid "No Followings"
-msgstr ""
+msgstr "没有粉丝"
 
 #: templates/forums/_macro.html:10
 msgid "Office Source Code"
@@ -573,7 +573,7 @@ msgstr "最高在线时间:"
 
 #: templates/search/result.html:3 templates/search/result.html:6
 msgid "Search"
-msgstr ""
+msgstr "查找"
 
 #: templates/setting/_macro.html:4 templates/setting/setting.html:5
 #: templates/setting/setting.html:19

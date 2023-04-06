@@ -57,7 +57,7 @@
     <table  style="font-size:12px;width:100%" align="center">
       <tr>
         <td align="center" style="border-right:1px solid #AACCEE;"><p>1</p>积分</td>
-        <td align="center" style="border-right:1px solid #AACCEE;"><p>{{ user.followers.count()}}</p>粉丝</td>
+        <td align="center" style="border-right:1px solid #AACCEE;"><a href="/u/{{ user.username }}/followers"><p>{{ user.followers.count()}}</p>粉丝</a></td>
         <td align="center"><p>{{ user.following_users.count() }}</p>关注</td>
       </tr>
     </table>

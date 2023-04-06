@@ -11,7 +11,9 @@
         {% set name = user.username %}
         <li role="presentation" {% if request.path.endswith('topics') %}class="active"{% endif %}><a href="{{ url_for('user.topic',username=user.username)}}">{{ _("topics of %(n)s",n = name) }}</a></li>
         <li role="presentation" {% if request.path.endswith('replies') %}class="active"{% endif %}><a href="{{ url_for('user.reply',username=user.username)}}">{{ _("replies of %(n)s",n = name) }}</a></li>
+        {% if request.user.username == user.username %}
         <li role="presentation" {% if request.path.endswith('collects') %}class="active"{% endif %}><a href="{{ url_for('user.collect',username=user.username)}}">{{ _("collects of %(n)s",n = name) }}</a></li>
+        {% endif %}
         <li role="presentation" {% if request.path.endswith('followers') %}class="active"{% endif %}><a href="{{ url_for('user.follower',username=user.username)}}">{{ _("followers of %(n)s",n = name) }}</a></li>
       </ul>
     </div>
