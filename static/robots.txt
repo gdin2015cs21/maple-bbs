@@ -2,5 +2,8 @@ User-agent: *
 Disallow: /login
 Disallow: /logout
 Disallow: /register
-Disallow: /index
-Disallow: /t
+Allow: /index
+Allow: /docs
+Allow: /tags
+Allow: /topic
+Allow: /forums
