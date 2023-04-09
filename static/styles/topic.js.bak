@@ -75,21 +75,6 @@ $(document).ready(function(){
     $('#topic-put-btn').click(function() {
         var _$this = $(this);
         var url = '/topic/' + _$this.attr("data-id");
-        if ($('input[name="title"]').val().length < 4 | $('input[name="title"]').val().length > 36){
-              text = '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul><li>标题: 字段长度必须介于 4 到 36 个字符之间。</li></ul></div>';
-              $('.alert-self').html(text);
-              return false;
-        }
-        if ($('input[name="tags"]').val().length < 2 | $('input[name="tags"]').val().length > 36){
-            text = '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul><li>节点: 字段总长度必须介于 2 到 36 个字符之间。</li></ul></div>';
-            $('.alert-self').html(text);
-            return false;
-        }
-        if ($('textarea[name="content"]').val().length < 6){
-            text = '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul><li>内容: 字段长度必须至少 6 个字符。</li></ul></div>';
-            $('.alert-self').html(text);
-            return false;
-        }
         var data = {
             csrf_token:$('input[name="csrf_token"]').val(),
             title:$('input[name="title"]').val(),
@@ -114,29 +99,28 @@ $(document).ready(function(){
         var _$this = $(this);
 //        console.log('topic-post-btn');
         var url = '/topic';
+        csrf_token = $('input[name="csrf_token"]').val();
+        title = $('input[name="title"]').val();
+        if (title.length < 4 | title.length > 36){
+            alert('标题: 字段长度必须介于 4 到 36 个字符之间。');
+        }
+        tags = $('input[name="tags"]').val();
+        if (tags.length < 1){
+            tags = '随便啦'
+        }
+        category = $('select[name="category"]').val();
+        content = editor.html()
+        if (content.length < 6){
+            alert('内容: 字段长度大于等于6。');
+        }
 
-        if ($('input[name="title"]').val().length < 4 | $('input[name="title"]').val().length > 36){
-              text = '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul><li>标题: 字段长度必须介于 4 到 36 个字符之间。</li></ul></div>';
-              $('.alert-self').html(text);
-              return false;
-        }
-        if ($('input[name="tags"]').val().length < 2 | $('input[name="tags"]').val().length > 36){
-            text = '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul><li>节点: 字段总长度必须介于 2 到 36 个字符之间。</li></ul></div>';
-            $('.alert-self').html(text);
-            return false;
-        }
-        if (editor.html().length < 6){
-            text = '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul><li>内容: 字段长度必须至少 6 个字符。</li></ul></div>';
-            $('.alert-self').html(text);
-            return false;
-        }
         var data = {
-            csrf_token:$('input[name="csrf_token"]').val(),
-            title:$('input[name="title"]').val(),
-            tags:$('input[name="tags"]').val(),
-            category:$('select[name="category"]').val(),
+            csrf_token: csrf_token,
+            title: title,
+            tags: tags,
+            category: category,
 //            content:$('textarea[name="content"]').val(),
-            content: editor.html(),
+            content: content,
             content_type:$('select[name="content_type"]').val()
         };
         $.ajax ({
@@ -146,8 +130,8 @@ $(document).ready(function(){
             contentType: 'application/json;charset=UTF-8',
             success: function(response) {
                 if (response.status === '200') {
-//                    window.location.href= url;
-                      document.location.href = 'http://www.cnblogs.com/chenyablog'
+                    window.location.href= url;
+//                      document.location.href = 'http://www.cnblogs.com/chenyablog'
                 }
             }
         });
