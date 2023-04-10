@@ -10,7 +10,7 @@
 #          By:
 # Description:
 # **************************************************************************
-from flask import Markup, redirect, render_template, request, url_for
+from flask import Markup, redirect, render_template, request, url_for, jsonify
 from flask_babel import gettext as _
 from flask_login import current_user, login_required
 
@@ -112,8 +112,9 @@ class TopicListView(MethodView):
         topic.board.post_count = 1
         topic.author.topic_count = 1
         # topic.reply_count = 1
-        return redirect(url_for('topic.topic', pk=topic.id))
+        # return redirect(url_for('topic.topic', pk=topic.id))
         # return {'success': True}
+        return jsonify('/topic/{}'.format(topic.id))
 
 
 class TopicView(MethodView):
