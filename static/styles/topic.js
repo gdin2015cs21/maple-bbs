@@ -146,8 +146,8 @@ $(document).ready(function(){
             contentType: 'application/json;charset=UTF-8',
             success: function(response) {
                 if (response.status === '200') {
-//                    window.location.href= url;
-                      document.location.href = 'http://www.cnblogs.com/chenyablog'
+                   window.location.href= url;
+                      // document.location.href = 'http://www.cnblogs.com/chenyablog'
                 }
             }
         });
