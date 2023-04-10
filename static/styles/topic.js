@@ -112,7 +112,7 @@ $(document).ready(function(){
     });
     $('#topic-post-btn').click(function() {
         var _$this = $(this);
-        console.log('topic-post-btn');
+//        console.log('topic-post-btn');
         var url = '/topic';
 
         if ($('input[name="title"]').val().length < 4 | $('input[name="title"]').val().length > 36){
@@ -145,10 +145,9 @@ $(document).ready(function(){
             data:JSON.stringify(data),
             contentType: 'application/json;charset=UTF-8',
             success: function(response) {
-                if (response.status === '301') {
-                    console.log(url)
-                    window.location.href= url;
-//                      document.location.href = 'http://www.cnblogs.com/chenyablog'
+                if (response.status === '200') {
+//                    window.location.href= url;
+                      document.location.href = 'http://www.cnblogs.com/chenyablog'
                 }
             }
         });
