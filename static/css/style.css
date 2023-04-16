@@ -670,7 +670,7 @@ body {
     height: 31px;
     margin-left: 11px;
     content: '';
-    background-image: url(/img/e.png);
+    background-image: url(/static/img/e.png);
     background-repeat: no-repeat;
     background-position: center;
 }

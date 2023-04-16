@@ -212,12 +212,12 @@ function peopleEnter(data) {
         $('#online').html(html)
         $('#online_chat').html(chat)
     }
-    $('#people').html(Object.keys(data.people).length)
+    $('#people').html(data.user_length)
     allReady()
 }
 
 function peopleLeave(data) {
-    $('#people').html(Object.keys(data.people).length)
+    $('#people').html(data.user_length)
     console.log('hidden', $('#online [data-chat="p_' + data.name + '"] .pp_status').is(':hidden'))
     console.log('visible', $('#online [data-chat="p_' + data.name + '"] .pp_status').is(':visible'))
     if ($('#online [data-chat="p_' + data.name + '"] .pp_status').is(':hidden')) {

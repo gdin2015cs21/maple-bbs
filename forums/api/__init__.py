@@ -26,6 +26,7 @@ def init_app(app):
         "forums.api.setting",
         "forums.api.search",
         "forums.api.chat",
+        "forums.api.ws",
     ]
     for blueprint in blueprints:
         import_string(blueprint).init_app(app)

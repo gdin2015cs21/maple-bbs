@@ -346,6 +346,10 @@ msgstr "标签"
 msgid "Good"
 msgstr "精华文章"
 
+#: templates/base/header.html:72 templates/forums/index.html:14
+msgid "WebChat(Beta)"
+msgstr "聊天(内测)"
+
 #: templates/base/link.html:2
 msgid "UserList"
 msgstr "用户列表"

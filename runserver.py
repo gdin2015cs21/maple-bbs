@@ -23,6 +23,9 @@ import click
 import os
 import sys
 
+from gevent import pywsgi
+from geventwebsocket.handler import WebSocketHandler
+
 app = create_app('config')
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
@@ -45,7 +48,9 @@ def shell_command():
 @cli.command()
 @click.option('-p', '--port', default=8000)
 def runserver(port):
-    app.run(port=port)
+    # app.run(port=port)
+    server = pywsgi.WSGIServer(('localhost', port), app, handler_class=WebSocketHandler)
+    server.serve_forever()
 
 
 @cli.command()
