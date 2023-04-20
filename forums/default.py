@@ -47,6 +47,6 @@ HEADER = [{
     "name": "Good",
     "url": "topic.good"
 }, {
-    "name": "聊天(内测)",
+    "name": "聊天(内测/添加了ChatGLM机器人)",
     "url": "chat.webchat"
 }]
