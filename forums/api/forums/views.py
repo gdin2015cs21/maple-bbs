@@ -15,6 +15,7 @@ from flask import render_template, request
 from forums.api.topic.db import Topic
 from forums.common.views import BaseMethodView as MethodView
 from forums.common.utils import (gen_filter_dict, gen_order_by)
+from flask_babel import gettext as _
 from forums.api.utils import gen_topic_filter, gen_topic_orderby
 
 from .db import Board
@@ -22,12 +23,24 @@ from .db import Board
 
 class IndexView(MethodView):
     def get(self):
-        topics = Topic.query.filter_by(
-            is_good=True, is_top=False).paginate(1, 10)
+        # topics = Topic.query.filter_by(
+        #     is_good=True, is_top=False).paginate(1, 10)
         top_topics = Topic.query.filter_by(is_top=True).limit(5)
+
+        keys = ['title']
+        request_data = request.data
+        orderby = gen_topic_orderby(request_data, keys)
+        params = gen_topic_filter(request_data, keys)
+
+        if request.path.endswith('good'):
+            params.update(is_good=True)
+        elif request.path.endswith('top'):
+            params.update(is_top=True)
+
+        topics = Topic.query.filter_by(**params).order_by(*orderby).paginate(1, 10)
+
         if not topics.items:
             topics = Topic.query.filter_by(is_top=False).paginate(1, 10)
-
         data = {'topics': topics, 'top_topics': top_topics}
         return render_template('forums/index.html', **data)
 
